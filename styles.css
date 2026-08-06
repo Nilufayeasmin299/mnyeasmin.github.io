@@ -170,15 +170,13 @@ h2.section-title{
 .news-links{margin-top:6px; font-size:.85rem; display:flex; gap:14px;}
 
 /* ---------- Publications ---------- */
-.pub-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:26px;}
-.pub-item{padding-bottom:26px; border-bottom:1px solid var(--line);}
-.pub-list .pub-item:last-child{border-bottom:none; padding-bottom:0;}
-.pub-year{font-family:'IBM Plex Mono',monospace; color:var(--navy-2); font-size:.8rem; margin-bottom:6px; display:block;}
-.pub-title{font-family:'Fraunces',serif; font-weight:600; font-size:1.08rem; margin:0 0 6px; color:var(--ink); line-height:1.35;}
-.pub-authors{color:var(--muted); font-size:.9rem; margin:0 0 4px;}
-.pub-authors .me{color:var(--ink); font-weight:600;}
-.pub-venue{color:var(--muted); font-size:.88rem; font-style:italic; margin:0 0 8px;}
-.pub-links{display:flex; gap:14px; flex-wrap:wrap; font-size:.85rem; font-weight:500;}
+.pub-links{display:flex; gap:10px; flex-wrap:wrap; font-size:.8rem; font-weight:600;}
+.pub-links a{
+  border:1px solid var(--line); border-radius:6px;
+  padding:5px 12px; color:var(--navy-2); text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.pub-links a:hover{background:var(--paper-alt); border-color:var(--navy-2); text-decoration:none;}
 
 /* ---------- Projects ---------- */
 .project-list{display:flex; flex-direction:column; gap:0;}
