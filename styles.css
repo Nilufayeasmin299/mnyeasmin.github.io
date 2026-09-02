@@ -1,10 +1,3 @@
-/* =========================================================
-   Most Nilufa Yeasmin — Academic Portfolio
-   Palette: deep navy / white / warm gray. Signature motif:
-   small reticle/crosshair marks — a nod to keypoint & pose
-   estimation, her research subject.
-   ========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
@@ -16,224 +9,132 @@
   --line: #e4e7ec;
   --paper: #ffffff;
   --paper-alt: #f6f7fa;
-  --ring: rgba(18,33,63,0.14);
-  --maxw: 880px;
+  --maxw: 820px;
 }
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Inter',system-ui,sans-serif;
-  font-size:16px;
-  line-height:1.6;
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
 a{color:var(--navy-2); text-decoration:none;}
 a:hover{text-decoration:underline; text-underline-offset:3px;}
-a:focus-visible, button:focus-visible{outline:2px solid var(--navy-2); outline-offset:3px;}
+a:focus-visible{outline:2px solid var(--navy-2); outline-offset:3px;}
 img{max-width:100%; display:block;}
-
 .serif{font-family:'Fraunces',serif;}
 .mono{font-family:'IBM Plex Mono',monospace;}
-
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
 
-/* ---------- Reticle signature mark ---------- */
-.reticle{
-  width:14px; height:14px; position:relative; flex:none;
-  display:inline-block;
-}
-.reticle::before,.reticle::after{
-  content:""; position:absolute; background:var(--navy-2);
-}
-.reticle::before{ left:6px; top:0; width:2px; height:14px; }
-.reticle::after{ top:6px; left:0; width:14px; height:2px; }
+.reticle{width:12px; height:12px; position:relative; display:inline-block; flex:none;}
+.reticle::before,.reticle::after{content:""; position:absolute; background:var(--navy-2);}
+.reticle::before{left:5px; top:0; width:2px; height:12px;}
+.reticle::after{top:5px; left:0; width:12px; height:2px;}
 
-/* ---------- Header / Nav ---------- */
+/* Sticky nav */
 .site-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.94);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
 }
-.nav-inner{
-  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
-  display:flex; align-items:center; justify-content:space-between;
-  gap:20px;
-}
-.brand{
-  font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;
-  color:var(--ink); display:flex; align-items:center; gap:10px;
-}
+.nav-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+.brand{font-family:'Fraunces',serif; font-weight:600; font-size:1rem; color:var(--ink); display:flex; gap:8px; align-items:center;}
 .brand:hover{text-decoration:none;}
-nav.primary{display:flex; gap:26px; flex-wrap:wrap;}
-nav.primary a{
-  color:var(--muted); font-size:0.88rem; font-weight:500;
-  letter-spacing:.02em; padding:4px 0; border-bottom:2px solid transparent;
-}
+nav.primary{display:flex; gap:20px; flex-wrap:wrap;}
+nav.primary a{color:var(--muted); font-size:.84rem; font-weight:500;}
 nav.primary a:hover{color:var(--ink); text-decoration:none;}
-nav.primary a.active{color:var(--ink); border-bottom-color:var(--navy-2);}
 .nav-toggle{display:none;}
-
 @media (max-width:640px){
   nav.primary{
     position:absolute; top:100%; left:0; right:0; background:var(--paper);
     flex-direction:column; gap:0; border-bottom:1px solid var(--line);
     max-height:0; overflow:hidden; transition:max-height .25s ease;
   }
-  nav.primary.open{max-height:400px;}
+  nav.primary.open{max-height:420px;}
   nav.primary a{padding:12px 24px; border-bottom:1px solid var(--line);}
-  .nav-toggle{
-    display:block; background:none; border:1px solid var(--line);
-    border-radius:6px; padding:6px 10px; font-size:1rem; cursor:pointer;
-  }
+  .nav-toggle{display:block; background:none; border:1px solid var(--line); border-radius:6px; padding:6px 10px; cursor:pointer;}
 }
 
-/* ---------- Hero ---------- */
-.hero{padding:64px 0 40px;}
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace; font-size:.78rem;
-  color:var(--navy-2); letter-spacing:.06em; text-transform:uppercase;
-  display:flex; align-items:center; gap:10px; margin-bottom:18px;
-}
-h1.name{
-  font-family:'Fraunces',serif; font-weight:600; font-size:2.6rem;
-  line-height:1.1; margin:0 0 8px; color:var(--navy);
-}
-.role-line{color:var(--muted); font-size:1.05rem; margin:0 0 28px;}
-.role-line a{color:var(--navy-2);}
-
-.hero-grid{display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap;}
-.hero-photo{
-  width:168px; height:168px; border-radius:10px; overflow:hidden;
-  border:1px solid var(--line); flex:none; box-shadow:0 8px 24px -12px rgba(18,33,63,.35);
-}
+/* Hero */
+.hero{padding:48px 0 8px; display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;}
+.hero-photo{width:132px; height:132px; border-radius:10px; overflow:hidden; border:1px solid var(--line); flex:none;}
 .hero-photo img{width:100%; height:100%; object-fit:cover;}
-.hero-text{flex:1; min-width:280px;}
-.hero-text p{color:var(--ink); font-size:1rem; max-width:64ch;}
+.hero-body{flex:1; min-width:260px;}
+h1.name{font-family:'Fraunces',serif; font-weight:600; font-size:2.1rem; margin:0 0 4px; color:var(--navy);}
+.tagline{color:var(--navy-2); font-weight:600; font-size:1.02rem; margin:0 0 14px;}
+ul.hero-facts{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:.94rem;}
+ul.hero-facts li{color:var(--ink);}
+ul.hero-facts a{font-weight:500;}
 
-.contact-grid{
-  display:grid; grid-template-columns:auto 1fr; gap:6px 16px;
-  margin:22px 0 18px; font-size:.92rem;
-}
-.contact-grid dt{color:var(--faint); font-family:'IBM Plex Mono',monospace; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; padding-top:2px;}
-.contact-grid dd{margin:0; color:var(--ink);}
-
-.social-row{display:flex; gap:16px; flex-wrap:wrap; margin-top:16px;}
-.social-row a{
-  font-size:.82rem; color:var(--navy-2); border:1px solid var(--line);
-  padding:6px 12px; border-radius:20px; font-weight:500;
-}
-.social-row a:hover{background:var(--paper-alt); text-decoration:none;}
-
-/* ---------- Section shell ---------- */
-section{padding:44px 0;}
+/* Section shell */
+section{padding:34px 0;}
 section + section{border-top:1px solid var(--line);}
-.section-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:26px; flex-wrap:wrap;}
 h2.section-title{
-  font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; margin:0;
-  color:var(--navy); display:flex; align-items:center; gap:10px;
+  font-family:'Fraunces',serif; font-weight:600; font-size:1.3rem; margin:0 0 18px;
+  color:var(--navy); display:flex; align-items:center; gap:9px;
 }
-.section-link{font-size:.85rem; color:var(--navy-2); font-weight:500; white-space:nowrap;}
-
-/* ---------- At a glance stats ---------- */
-.stats-row{display:flex; gap:0; flex-wrap:wrap; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
-.stat{flex:1; min-width:120px; padding:20px 22px; text-align:left; border-right:1px solid var(--line);}
-.stat:last-child{border-right:none;}
-.stat .num{font-family:'Fraunces',serif; font-weight:600; font-size:2rem; color:var(--navy);}
-.stat .label{color:var(--muted); font-size:.82rem; margin-top:4px;}
-.stats-note{color:var(--faint); font-size:.78rem; margin-top:10px;}
-
-/* ---------- Research interests grid ---------- */
-.interests-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
-.interest-card{background:var(--paper); padding:20px 22px;}
-.interest-card .idx{font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--navy-2); display:block; margin-bottom:8px;}
-.interest-card h3{font-family:'Fraunces',serif; font-size:1rem; font-weight:600; margin:0 0 6px; color:var(--ink);}
-.interest-card p{margin:0; color:var(--muted); font-size:.88rem;}
-
-/* ---------- News / timeline ---------- */
-.news-list{list-style:none; margin:0; padding:0; border-left:2px solid var(--line); }
-.news-item{position:relative; padding:0 0 26px 26px;}
-.news-item::before{
-  content:""; position:absolute; left:-7px; top:5px; width:12px; height:12px;
-  border-radius:50%; background:var(--paper); border:2px solid var(--navy-2);
+.bio p{margin:0 0 14px; max-width:70ch;}
+.bio p:first-of-type::first-letter{
+  font-family:'Fraunces',serif; font-weight:600; font-size:3rem; line-height:.72;
+  float:left; padding-right:9px; padding-top:5px; color:var(--navy);
 }
-.news-date{font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--faint); text-transform:uppercase; letter-spacing:.04em;}
-.news-tag{
-  display:inline-block; font-size:.72rem; font-weight:600; color:var(--navy-2);
-  border:1px solid var(--navy-2); border-radius:20px; padding:1px 9px; margin:6px 6px 6px 0;
+.interests-line{color:var(--muted); font-size:.95rem; margin-top:14px;}
+.interests-line strong{color:var(--ink); font-weight:600;}
+
+/* News */
+.news-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;}
+.news-list li{font-size:.94rem; display:flex; gap:10px; align-items:baseline;}
+.news-list .news-when{font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--navy-2); white-space:nowrap; min-width:96px;}
+.news-list .news-emoji{flex:none;}
+
+/* Background */
+.bg-item{margin-bottom:20px;}
+.bg-item:last-child{margin-bottom:0;}
+.bg-org{font-weight:600; color:var(--ink); font-size:1rem;}
+.bg-loc{color:var(--faint); font-size:.82rem; font-family:'IBM Plex Mono',monospace;}
+.bg-role{color:var(--navy-2); font-weight:500; margin:2px 0;}
+.bg-detail{color:var(--muted); font-size:.9rem; margin:2px 0 0;}
+
+/* Research groups */
+.research-group{margin-bottom:28px;}
+.research-group:last-child{margin-bottom:0;}
+.research-group h3{font-family:'Fraunces',serif; font-size:1.05rem; font-weight:600; color:var(--ink); margin:0 0 12px;}
+.research-entry{display:flex; gap:14px; margin-bottom:14px; align-items:flex-start;}
+.research-entry:last-child{margin-bottom:0;}
+.badge{
+  flex:none; font-family:'IBM Plex Mono',monospace; font-size:.68rem; font-weight:600;
+  color:var(--navy-2); border:1px solid var(--navy-2); border-radius:20px; padding:2px 9px;
+  white-space:nowrap; margin-top:2px;
 }
-.news-item p{margin:6px 0 0; color:var(--ink);}
-.news-links{margin-top:6px; font-size:.85rem; display:flex; gap:14px;}
+.research-text .r-title{font-weight:600; color:var(--ink); display:block;}
+.research-text .r-meta{color:var(--muted); font-size:.88rem; margin-top:2px;}
 
-/* ---------- Publications ---------- */
-.pub-links{display:flex; gap:10px; flex-wrap:wrap; font-size:.8rem; font-weight:600;}
-.pub-links a{
-  border:1px solid var(--line); border-radius:6px;
-  padding:5px 12px; color:var(--navy-2); text-transform:uppercase;
-  letter-spacing:.03em;
-}
-.pub-links a:hover{background:var(--paper-alt); border-color:var(--navy-2); text-decoration:none;}
+/* Publications flat list */
+.pub-flat{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
+.pub-flat li{font-size:.94rem; color:var(--ink); line-height:1.55;}
+.pub-flat .me{font-weight:700;}
+.pub-flat .venue{font-style:italic; color:var(--muted);}
+.pub-flat .pub-links{margin-left:4px; font-size:.85rem;}
 
-/* ---------- Projects ---------- */
-.project-list{display:flex; flex-direction:column; gap:0;}
-.project-item{padding:26px 0; border-bottom:1px solid var(--line);}
-.project-list .project-item:last-child{border-bottom:none;}
-.project-top{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:baseline;}
-.project-title{font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; margin:0; color:var(--ink);}
-.project-dates{font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--faint); white-space:nowrap;}
-.project-tags{margin:8px 0 10px; font-size:.82rem; color:var(--navy-2);}
-.project-item ul{margin:8px 0 0; padding-left:20px; color:var(--ink); font-size:.94rem;}
-.project-item li{margin-bottom:4px;}
-
-/* ---------- Service / Awards lists ---------- */
+/* Plain service/awards list */
 .plain-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column;}
-.plain-list li{
-  display:flex; gap:18px; padding:14px 0; border-bottom:1px solid var(--line);
-  align-items:baseline; flex-wrap:wrap;
-}
+.plain-list li{display:flex; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); flex-wrap:wrap; align-items:baseline;}
 .plain-list li:last-child{border-bottom:none;}
-.plain-list .when{font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--navy-2); min-width:96px; flex:none;}
-.plain-list .what{color:var(--ink); font-size:.95rem;}
-.plain-list .what .org{color:var(--muted); font-size:.88rem; display:block; margin-top:2px;}
+.plain-list .when{font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--navy-2); min-width:104px; flex:none;}
+.plain-list .what .org{color:var(--muted); font-size:.86rem; display:block; margin-top:2px;}
+h3.sub{font-family:'Fraunces',serif; font-size:1rem; font-weight:600; color:var(--ink); margin:22px 0 8px;}
+h3.sub:first-child{margin-top:0;}
 
-/* ---------- Gallery ---------- */
-.gallery-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;}
-.gallery-grid figure{margin:0; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--paper-alt);}
-.gallery-grid img{width:100%; height:240px; object-fit:cover;}
-.gallery-grid figcaption{padding:10px 14px; font-size:.82rem; color:var(--muted);}
-.gallery-empty{
-  border:1px dashed var(--line); border-radius:10px; padding:40px 24px; text-align:center;
-  color:var(--faint); font-size:.9rem;
-}
-
-/* ---------- Biography ---------- */
-.bio p{max-width:70ch; color:var(--ink);}
-
-/* ---------- Footer ---------- */
-footer{border-top:1px solid var(--line); padding:32px 0 48px; color:var(--faint); font-size:.82rem;}
+footer{border-top:1px solid var(--line); padding:26px 0 44px; color:var(--faint); font-size:.82rem;}
 .footer-inner{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
 .footer-social{display:flex; gap:14px;}
 .footer-social a{color:var(--faint);}
 .footer-social a:hover{color:var(--navy-2);}
 
-/* ---------- Page header (sub-pages) ---------- */
-.page-head{padding:48px 0 8px;}
-.page-head h1{font-family:'Fraunces',serif; font-weight:600; font-size:2rem; color:var(--navy); margin:0 0 8px; display:flex; align-items:center; gap:12px;}
-.page-head p{color:var(--muted); margin:0 0 8px; max-width:60ch;}
-
 @media (max-width:640px){
-  h1.name{font-size:2rem;}
-  .hero{padding:44px 0 28px;}
-  .stats-row{flex-direction:column;}
-  .stat{border-right:none; border-bottom:1px solid var(--line);}
-  .stat:last-child{border-bottom:none;}
+  h1.name{font-size:1.7rem;}
+  .hero{padding:36px 0 4px;}
 }
-
-.reduced-motion, .no-anim{transition:none !important; animation:none !important;}
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
 }

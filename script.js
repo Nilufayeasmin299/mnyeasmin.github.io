@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (btn && nav) {
     btn.addEventListener('click', function () {
       nav.classList.toggle('open');
-      var expanded = nav.classList.contains('open');
-      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { nav.classList.remove('open'); });
     });
   }
 });
