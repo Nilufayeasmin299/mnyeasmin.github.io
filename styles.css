@@ -113,7 +113,18 @@ h2.section-title{
 .research-text .r-title{font-weight:600; color:var(--ink); display:block;}
 .research-text .r-meta{color:var(--body-text); font-size:15px; line-height:22.5px; margin-top:2px;}
 
-/* Publications flat list */
+/* Boxed scroll-panel card, matching beining's list boxes */
+.card-panel{
+  background:rgb(252,252,252);
+  border:0.8px solid rgb(229,231,235);
+  border-radius:8px;
+  color:rgb(73,78,82);
+  padding:16px 20px;
+  max-height:420px;
+  overflow-y:auto;
+  margin-bottom:18px;
+}
+.card-panel:last-child{margin-bottom:0;}
 .pub-flat{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;}
 .pub-flat li{font-size:15px; color:var(--body-text); line-height:22.5px;}
 .pub-flat .me{font-weight:700; color:var(--ink);}
