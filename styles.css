@@ -14,10 +14,10 @@
 }
 
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; font-size:15px;}
 body{
   margin:0; background:var(--paper); color:var(--ink);
-  font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.65;
+  font-family:'Inter',system-ui,sans-serif; font-size:1rem; line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 a{color:var(--navy-2); text-decoration:none;}
@@ -81,8 +81,8 @@ section + section{border-top:1px solid var(--line);}
 h2.section-title{
   font-weight:700; font-size:1.25rem; margin:0 0 18px; color:var(--ink);
 }
-.bio p{margin:0 0 14px; max-width:70ch;}
-.interests-line{color:var(--muted); font-size:.95rem; margin-top:14px;}
+.bio p{margin:0 0 12px; max-width:none; line-height:1.6;}
+.interests-line{color:var(--muted); font-size:.95rem; margin-top:12px; line-height:1.6;}
 .interests-line strong{color:var(--ink); font-weight:600;}
 
 /* News */
@@ -114,8 +114,8 @@ h2.section-title{
 .research-text .r-meta{color:var(--muted); font-size:.88rem; margin-top:2px;}
 
 /* Publications flat list */
-.pub-flat{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
-.pub-flat li{font-size:.94rem; color:var(--ink); line-height:1.55;}
+.pub-flat{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;}
+.pub-flat li{font-size:.94rem; color:var(--ink); line-height:1.6;}
 .pub-flat .me{font-weight:700;}
 .pub-flat .venue{font-style:italic; color:var(--muted);}
 .pub-flat .pub-links{margin-left:4px; font-size:.85rem;}
