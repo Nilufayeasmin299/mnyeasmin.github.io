@@ -129,7 +129,7 @@ h2.section-title{
 .pub-flat li{font-size:15px; color:var(--body-text); line-height:22.5px;}
 .pub-flat .me{font-weight:700; color:var(--ink);}
 .pub-flat .venue{font-style:italic; color:var(--body-text);}
-.pub-flat .pub-links{margin-left:4px; font-size:.85rem;}
+.pub-flat a{text-decoration:underline; text-underline-offset:2px;}
 
 /* Plain service/awards list */
 .plain-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column;}
