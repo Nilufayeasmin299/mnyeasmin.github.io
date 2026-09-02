@@ -59,21 +59,21 @@ nav.primary a:hover{color:var(--ink); text-decoration:none;}
 /* Two-column layout */
 .layout{
   max-width:var(--maxw-wide); margin:0 auto; padding:0 24px;
-  display:grid; grid-template-columns:240px 1fr; gap:52px; align-items:start;
+  display:grid; grid-template-columns:220px 1fr; gap:44px; align-items:start;
 }
 .sidebar{
   position:sticky; top:70px; padding-top:36px;
-  display:flex; flex-direction:column; gap:6px;
+  display:flex; flex-direction:column; gap:4px;
 }
-.sidebar-photo{width:180px; height:180px; border-radius:10px; overflow:hidden; border:1px solid var(--line); margin-bottom:14px;}
+.sidebar-photo{width:132px; height:132px; border-radius:50%; overflow:hidden; border:1px solid var(--line); margin-bottom:16px;}
 .sidebar-photo img{width:100%; height:100%; object-fit:cover;}
-h1.name{font-family:'Fraunces',serif; font-weight:600; font-size:1.55rem; line-height:1.2; margin:0 0 4px; color:var(--navy);}
-.tagline{color:var(--navy-2); font-weight:600; font-size:.92rem; margin:0 0 12px;}
-.sidebar-blurb{color:var(--muted); font-size:.88rem; line-height:1.55; margin:0 0 16px;}
-ul.sidebar-facts{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; font-size:.9rem;}
-ul.sidebar-facts li{color:var(--ink); display:flex; align-items:center; gap:8px;}
-ul.sidebar-facts .ico{flex:none; font-size:.95rem;}
-ul.sidebar-facts a{font-weight:500;}
+h1.name{font-family:'Inter',sans-serif; font-weight:700; font-size:1.3rem; line-height:1.3; margin:0 0 2px; color:var(--ink);}
+.tagline{color:var(--muted); font-weight:400; font-size:.88rem; margin:0 0 14px;}
+.sidebar-blurb{color:var(--muted); font-size:.86rem; line-height:1.55; margin:0 0 16px;}
+ul.sidebar-facts{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; font-size:.86rem;}
+ul.sidebar-facts li{color:var(--muted); display:flex; align-items:center; gap:8px;}
+ul.sidebar-facts .ico{flex:none; font-size:.5rem; color:var(--faint);}
+ul.sidebar-facts a{font-weight:400; color:var(--navy-2);}
 
 .content{padding-top:36px; min-width:0;}
 
