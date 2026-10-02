@@ -157,3 +157,9 @@ footer{border-top:1px solid var(--line); padding:26px 0 44px; color:var(--faint)
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
 }
+/* More About Me */
+.about-more{margin-top:24px; padding-top:22px; border-top:1px solid var(--line);}
+.about-more p{margin:0 0 7.5px; line-height:22.5px; max-width:none;}
+h3.sub.with-icon{display:flex; align-items:center; gap:9px; margin:0 0 12px;}
+h3.sub.with-icon .ico{width:18px; height:18px; color:var(--navy-2); flex:none;}
+h4.sub-sm{font-size:.92rem; font-weight:700; color:var(--ink); margin:20px 0 8px;}
