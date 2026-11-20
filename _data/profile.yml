@@ -83,4 +83,23 @@ bio:
     <em>Array</em> (Elsevier), <em>Bioinformatics and Biology Insights</em>, and <em>Big Data and
     Cognitive Computing</em>.
 
-outside: "Outside research, I love cinema, mostly Bollywood dramas but also international films from Korean thrillers to quiet arthouse dramas. Away from the keyboard you will usually find me on a long walk, cooking Bangladeshi dishes like bhuna khichuri, or listening to old Bangla folk songs."
+# "Outside the lab" section at the end of the homepage. tone: red | warm | accent | green
+outside:
+  intro: When I am not working on pose estimation, I am usually somewhere between a film, a kitchen and a long walk.
+  items:
+    - icon: film
+      tone: red
+      title: Cinema
+      text: Bollywood dramas first, then anything from Korean thrillers to quiet arthouse films.
+    - icon: soup
+      tone: warm
+      title: Cooking
+      text: Bangladeshi home cooking, from fish curry to bhuna khichuri with a fried egg and traditional desserts.
+    - icon: music
+      tone: accent
+      title: Music
+      text: Old Bangla folk songs and film soundtracks, usually on repeat.
+    - icon: footprints
+      tone: green
+      title: Weekends
+      text: A long walk in nature with a good playlist.

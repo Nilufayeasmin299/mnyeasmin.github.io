@@ -274,8 +274,19 @@ h1, h2, h3 { color: var(--ink); }
 .hl-card h3 { font-size: 16.5px; font-weight: 600; line-height: 1.4; margin: 7px 0 6px; }
 .hl-card p { margin: 0; font-size: 14.5px; line-height: 1.6; }
 
-.outside { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); }
-.outside p { margin: 0; font-size: 15px; line-height: 1.7; }
+.outside-intro { margin: 0 0 16px; font-size: 16px; line-height: 1.7; }
+.hobbies { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.hobbies > li {
+  display: flex; gap: 14px; align-items: flex-start; padding: 16px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+}
+.h-icon { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); }
+.h-icon .icon { width: 21px; height: 21px; }
+.tone-red .h-icon { background: var(--red-soft); color: var(--red); }
+.tone-warm .h-icon { background: var(--warm-soft); color: var(--warm); }
+.tone-green .h-icon { background: var(--green-soft); color: var(--green); }
+.hobbies b { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-bottom: 2px; }
+.hobbies p { margin: 0; font-size: 14.5px; line-height: 1.55; }
 
 @media (max-width: 960px) {
   .home { grid-template-columns: 1fr; grid-template-areas: "photo" "main" "facts"; grid-template-rows: auto; padding-top: 28px; padding-bottom: 56px; row-gap: 26px; }
@@ -284,6 +295,7 @@ h1, h2, h3 { color: var(--ink); }
 }
 @media (max-width: 600px) {
   .hl { grid-template-columns: 1fr; }
+  .hobbies { grid-template-columns: 1fr; }
   .news { padding: 4px 18px; }
   .news-item { grid-template-columns: 1fr; gap: 2px; }
   .role { font-size: 17px; }

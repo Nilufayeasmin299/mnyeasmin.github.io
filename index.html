@@ -64,9 +64,14 @@ redirect_from:
       </div>
     </section>
 
-    <section class="outside" aria-labelledby="outside-heading">
-      <h2 class="label" id="outside-heading">Outside the lab</h2>
-      <p>{{ pr.outside }}</p>
+    <section class="block outside" aria-labelledby="outside-heading">
+      <div class="block-head"><h2 id="outside-heading">Outside the lab</h2></div>
+      <p class="outside-intro">{{ pr.outside.intro }}</p>
+      <ul class="hobbies">
+        {%- for o in pr.outside.items %}
+        <li class="tone-{{ o.tone | default: 'accent' }}"><span class="h-icon">{% include icon.html name=o.icon %}</span><div><b>{{ o.title }}</b><p>{{ o.text }}</p></div></li>
+        {%- endfor %}
+      </ul>
     </section>
   </div>
 

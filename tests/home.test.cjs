@@ -102,6 +102,16 @@ test('outside-the-lab note', async () => {
   assert.match(await page.locator('.outside').textContent(), /bhuna khichuri/);
 });
 
+test('outside the lab shows four interests, each with an icon', async () => {
+  assert.equal((await page.locator('.outside h2').textContent()).trim(), 'Outside the lab');
+  assert.deepEqual(
+    (await page.locator('.hobbies > li b').allTextContents()).map((s) => s.trim()),
+    ['Cinema', 'Cooking', 'Music', 'Weekends'],
+  );
+  assert.equal(await page.locator('.hobbies > li .h-icon svg path, .hobbies > li .h-icon svg rect, .hobbies > li .h-icon svg circle').count() > 0, true);
+  assert.equal(await page.locator('.hobbies > li .h-icon svg').count(), 4);
+});
+
 test('Person JSON-LD with four sameAs links and SDSU affiliation', async () => {
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
   const person = blocks.map((b) => JSON.parse(b)).find((o) => o['@type'] === 'Person');
