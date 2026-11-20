@@ -1,0 +1,145 @@
+# Experience page. Positions show as a timeline grouped Research, Teaching, Industry (newest first in each).
+# category: research | teaching | industry
+
+positions:
+  - category: research
+    role: Graduate Research Assistant
+    org: South Dakota State University
+    location: Brookings, SD, USA
+    start: Jan 2026
+    end: Present
+    advisor: Dr. Ruyi Lian
+    bullets:
+      - Conducting research on geometric computer vision, neural solvers, and camera pose estimation for the Orthographic-n-Point problem.
+      - Studying outlier-resilient pose estimation through DeepOnP, including top-K rotation selection, quaternion averaging, and accuracy analysis under Gaussian image noise.
+      - Building PyTorch-based training and evaluation pipelines, running large-scale experiments on GPU/HPC systems, and preparing reproducible analyses for manuscript development.
+    tags: [PyTorch, Camera Pose Estimation, Multi-view Geometry, GPU/HPC]
+
+  - category: research
+    role: Research Assistant
+    org: BUBT Research and Innovation Center, Bangladesh University of Business and Technology
+    location: Dhaka, Bangladesh
+    start: Apr 2025
+    end: Dec 2025
+    bullets:
+      - Contributed to collaborative research projects in machine learning, computer vision, and data-driven intelligent systems.
+    tags: [Machine Learning, Computer Vision]
+
+  - category: research
+    role: Volunteer Research Assistant
+    org: Computer Vision and Intelligent Interfacing Lab, Islamic University, Bangladesh
+    location: Kushtia, Bangladesh
+    start: Sep 2022
+    end: Jun 2023
+    advisor: Dr. Md Zahidul Islam
+    bullets:
+      - Conducted biomedical data analysis projects involving network-based biomarker identification and high-throughput biological sequence analysis.
+      - Contributed to machine-learning-based integrative pipelines for functional annotation and visualization.
+    tags: [Bioinformatics, Machine Learning]
+
+  - category: research
+    role: Undergraduate Research Student
+    org: Data Privacy and Security Research Lab, Islamic University, Bangladesh
+    location: Kushtia, Bangladesh
+    start: Jan 2019
+    end: May 2024
+    advisor: Dr. Bikash Chandra Singh
+    bullets:
+      - Developed machine learning and deep learning pipelines for COVID-19 Twitter sentiment analysis and phishing website detection.
+      - Worked on classification, prediction, and data-driven cybersecurity applications, leading to peer-reviewed journal and conference publications.
+    tags: [Deep Learning, NLP, Cybersecurity]
+
+  - category: teaching
+    role: Graduate Teaching Assistant
+    org: South Dakota State University
+    location: Brookings, SD, USA
+    start: Aug 2026
+    end: Present
+    bullets:
+      - Responsible for teaching and supporting CSC 325 (Management Information Systems) and CSC 445 (Introduction to Theory of Computation).
+    tags: [CSC 325, CSC 445]
+
+  - category: teaching
+    role: Mentor
+    org: Tuitoriaa.com
+    location: Dhaka, Bangladesh
+    start: Apr 2022
+    end: Apr 2024
+    bullets:
+      - Mentored students in Physics and Mathematics at O-level and A-level equivalent standards.
+    tags: [Physics, Mathematics]
+
+  - category: industry
+    role: Industrial Trainee, Data Center
+    org: Dhaka Colo Ltd.
+    location: Dhaka, Bangladesh
+    start: Mar 2020
+    bullets:
+      - Gained practical exposure to data center operations, server maintenance, network troubleshooting, and security protocol practices.
+      - Connected academic computing knowledge with real-world infrastructure management and technical operations.
+    tags: [Data Center Operations, Networking]
+
+service:
+  - role: Professional Member
+    org: Association for Computing Machinery (ACM)
+    years: Sep 2026
+  - role: Ad hoc Reviewer
+    org: PLOS ONE
+    years: "2024"
+  - role: Program Committee Member
+    org: Workshop on Research Methodology and Scientific Paper Publishing
+    years: "2019"
+  - role: Active Member
+    org: ICT Innovation Lab, Dept. of ICT, Islamic University, Bangladesh
+    years: 2018 – 2020
+  - role: Programming Trainer
+    org: Programming Club, Dept. of ICT, Islamic University, Bangladesh
+    years: 2016 – 2019
+  - role: Founding Member
+    org: Alorito'30, Islamic University, Bangladesh
+    years: 2017 – present
+  - role: Volunteer
+    org: Save The Tomorrow, Chapai Nawabganj Branch, Bangladesh
+    years: 2020 – present
+  - role: Executive Member
+    org: Chapai Nawabganj Student Association, Islamic University, Bangladesh
+    years: 2016 – 2019
+
+awards:
+  - title: University Merit Scholarship, two consecutive years
+    org: Islamic University, Bangladesh
+    years: 2018 – 2019
+  - title: 1st Runner Up, Programming Contest
+    org: Department of ICT, Islamic University, Bangladesh
+    years: "2018"
+  - title: Certificate of Participation, Inter-University Girls' Programming Contest (Team IU Girls)
+    org: North South University, Bangladesh
+    years: "2018"
+  - title: Award, Mathematics Contest
+    org: Department of ICT, Islamic University, Bangladesh
+    years: "2016"
+
+certifications:
+  - title: Deep Learning Specialization (128 hours)
+    provider: Andrew Ng, Stanford University (Coursera)
+    date: Feb 2024
+  - title: Machine Learning Specialization (60 hours)
+    provider: Andrew Ng, Stanford University (Coursera)
+    date: Sep 2019
+  - title: Python for Everybody (19 hours)
+    provider: Charles Severance, University of Michigan
+    date: Jun 2019
+
+skills:
+  - area: Programming
+    items: Python, C/C++, MATLAB, Java
+  - area: Deep Learning
+    items: PyTorch, TensorFlow, Keras, CNNs, RNNs, transfer learning, model training and evaluation
+  - area: Computer Vision
+    items: Image classification, image segmentation, 3D reconstruction, camera pose estimation, multi-view geometry, OpenCV, COLMAP-related workflows
+  - area: Machine Learning
+    items: Classification, regression, ensemble learning, PCA, gradient boosting, explainable machine learning
+  - area: Data Science
+    items: NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, data cleaning, statistical analysis, visualization
+  - area: Research Tools
+    items: Git, Linux, Google Colab, Kaggle, LaTeX, Overleaf, MS Office, HPC/SLURM exposure

@@ -1,0 +1,85 @@
+---
+title: Experience
+description: Research, teaching and industry experience of Most Nilufa Yeasmin, with professional service, awards, certifications and technical skills.
+nav: experience
+permalink: /experience/
+redirect_from:
+  - /service.html
+  - /awards.html
+---
+{%- assign x = site.data.experience -%}
+<div class="container narrow">
+  <header class="page-head">
+    <h1>Experience</h1>
+    <p>Research, teaching and industry positions, followed by service, awards, certifications and skills.</p>
+  </header>
+
+  <section class="exp-section">
+    <h2>Positions</h2>
+    <ol class="timeline">
+      {%- for p in x.positions %}
+      {%- case p.category -%}
+      {%- when "teaching" -%}{%- assign icon = "cap" -%}{%- assign cat = "Teaching" -%}
+      {%- when "industry" -%}{%- assign icon = "building" -%}{%- assign cat = "Industry" -%}
+      {%- else -%}{%- assign icon = "flask" -%}{%- assign cat = "Research" -%}
+      {%- endcase %}
+      <li data-category="{{ p.category }}">
+        <span class="tl-icon">{% include icon.html name=icon %}</span>
+        <div class="tl-card">
+          <p class="tl-cat">{{ cat }}</p>
+          <div class="tl-head">
+            <h3 class="tl-role">{{ p.role }}</h3>
+            <span class="tl-date">{{ p.start }}{% if p.end %} – {{ p.end }}{% endif %}</span>
+          </div>
+          <p class="tl-org">{{ p.org }}</p>
+          <p class="tl-meta">{{ p.location }}{% if p.advisor %} · Advisor: {{ p.advisor }}{% endif %}</p>
+          <ul class="bullets">
+            {%- for b in p.bullets %}
+            <li>{{ b }}</li>
+            {%- endfor %}
+          </ul>
+          {%- if p.tags %}
+          <ul class="tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <section class="exp-section service">
+    <h2>Service and leadership</h2>
+    <ul class="rows">
+      {%- for s in x.service %}
+      <li><span class="yr">{{ s.years }}</span><span><b>{{ s.role }}</b>, {{ s.org }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="exp-section awards">
+    <h2>Awards and honors</h2>
+    <ul class="rows">
+      {%- for a in x.awards %}
+      <li><span class="yr">{{ a.years }}</span><span><b>{{ a.title }}</b>, {{ a.org }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="exp-section certs">
+    <h2>Certifications</h2>
+    <ul class="rows">
+      {%- for c in x.certifications %}
+      <li><span class="yr">{{ c.date }}</span><span><b>{{ c.title }}</b>, {{ c.provider }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="exp-section skills">
+    <h2>Technical skills</h2>
+    <dl class="skill-list">
+      {%- for k in x.skills %}
+      <div><dt>{{ k.area }}</dt><dd>{{ k.items }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+</div>

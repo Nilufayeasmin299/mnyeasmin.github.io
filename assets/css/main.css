@@ -348,3 +348,55 @@ h1, h2, h3 { color: var(--ink); }
 @media (max-width: 720px) {
   .project { grid-template-columns: minmax(0, 1fr); gap: 14px; }
 }
+
+/* ==========================================================================
+   Experience
+   ========================================================================== */
+.exp-section { margin-top: 40px; }
+.exp-section > h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; letter-spacing: -.01em; margin: 0 0 16px; }
+
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 21px; top: 10px; bottom: 10px; width: 2px; background: var(--line); }
+.timeline > li { position: relative; padding: 0 0 18px 64px; }
+.timeline > li:last-child { padding-bottom: 0; }
+.tl-icon {
+  position: absolute; left: 0; top: 4px; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--card); border: 2px solid var(--accent); color: var(--accent);
+}
+.tl-icon .icon { width: 20px; height: 20px; }
+.timeline > li[data-category="teaching"] .tl-icon { border-color: var(--green); color: var(--green); }
+.timeline > li[data-category="industry"] .tl-icon { border-color: var(--warm); color: var(--warm); }
+.tl-card { min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
+.tl-cat { margin: 0 0 4px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.timeline > li[data-category="teaching"] .tl-cat { color: var(--green); }
+.timeline > li[data-category="industry"] .tl-cat { color: var(--warm); }
+.tl-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 6px 12px; }
+.tl-role { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; }
+.tl-date { font-family: var(--mono); font-size: 12px; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); white-space: nowrap; }
+.tl-org { margin: 4px 0 0; font-weight: 500; color: var(--text); }
+.tl-meta { margin: 2px 0 0; font-size: 13.5px; color: var(--muted); }
+.bullets { margin: 10px 0 0; padding-left: 18px; }
+.bullets li { margin: 4px 0; font-size: 15px; line-height: 1.6; }
+.tl-card .tags { margin-top: 12px; }
+.tl-card .tags li { font-size: 12px; padding: 3px 10px; }
+
+.rows { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+.rows li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 12px 20px; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.55; }
+.rows li:last-child { border-bottom: 0; }
+.rows .yr { font-family: var(--mono); font-size: 12.5px; color: var(--muted); padding-top: 2px; }
+.rows b { color: var(--ink); font-weight: 600; }
+
+.skill-list { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+.skill-list > div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; padding: 12px 20px; border-bottom: 1px solid var(--line); }
+.skill-list > div:last-child { border-bottom: 0; }
+.skill-list dt { font-weight: 600; color: var(--ink); font-size: 15px; }
+.skill-list dd { margin: 0; font-size: 15px; line-height: 1.55; }
+
+@media (max-width: 600px) {
+  .timeline::before { left: 17px; }
+  .timeline > li { padding-left: 50px; }
+  .tl-icon { width: 36px; height: 36px; }
+  .tl-icon .icon { width: 17px; height: 17px; }
+  .tl-card { padding: 14px 16px; }
+  .rows li, .skill-list > div { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 12px 16px; }
+}
