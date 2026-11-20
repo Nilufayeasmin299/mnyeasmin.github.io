@@ -46,6 +46,12 @@ test('footer has copyright, last-updated month and four profile links', async ()
   assert.equal(await page.locator('footer nav a').count(), 4);
 });
 
+test('navigation landmarks have unique names', async () => {
+  const labels = await page.locator('nav').evaluateAll((navs) => navs.map((n) => n.getAttribute('aria-label')));
+  assert.ok(labels.every(Boolean), `unnamed nav: ${JSON.stringify(labels)}`);
+  assert.equal(new Set(labels).size, labels.length, `duplicate nav names: ${labels.join(', ')}`);
+});
+
 test('skip link targets main', async () => {
   assert.equal(await page.locator('a.skip').getAttribute('href'), '#main');
   assert.equal(await page.locator('main#main').count(), 1);

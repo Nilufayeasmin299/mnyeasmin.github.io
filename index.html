@@ -39,7 +39,7 @@ redirect_from:
       <p>{{ para }}</p>
       {%- endfor %}
     </div>
-    <ul class="tags" aria-label="Research interests">
+    <ul class="tags">
       {%- for t in pr.interests %}<li>{{ t }}</li>{% endfor %}
     </ul>
 
@@ -75,7 +75,7 @@ redirect_from:
       <h2 class="label">Education</h2>
       <ul class="tl">
         {%- for e in pr.education %}
-        <li><b>{{ e.degree }}</b><span>{{ e.school }}</span><span class="years">{{ e.years }}</span></li>
+        <li><b>{{ e.degree | escape }}</b><span>{{ e.school | escape }}</span><span class="years">{{ e.years }}</span></li>
         {%- endfor %}
       </ul>
     </section>

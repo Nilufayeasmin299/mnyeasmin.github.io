@@ -38,7 +38,7 @@ test('each page: unique short <title>, meta description, canonical, og:image', (
     const html = readSiteFile(rel);
     const title = attr(html, /<title>([^<]+)<\/title>/);
     assert.ok(title, `no <title> in ${rel}`);
-    assert.ok(title.length <= 90, `title too long in ${rel}: ${title}`);
+    assert.ok(title.length <= 70, `title longer than 70 characters in ${rel}: ${title}`);
     titles.push(title);
     assert.ok(attr(html, /<meta name="description" content="([^"]+)"/), `no description in ${rel}`);
     assert.ok(attr(html, /<link rel="canonical" href="(https:\/\/mnyeasmin\.com\/[^"]*)"/), `no canonical in ${rel}`);
@@ -46,7 +46,7 @@ test('each page: unique short <title>, meta description, canonical, og:image', (
   }
   assert.equal(new Set(titles).size, titles.length, `duplicate titles: ${titles.join(' / ')}`);
   assert.equal(attr(readSiteFile('index.html'), /<title>([^<]+)<\/title>/),
-    'Most Nilufa Yeasmin | Ph.D. Student in Computer Science, South Dakota State University');
+    'Most Nilufa Yeasmin | Ph.D. Student, South Dakota State University');
 });
 
 test('link-preview image is a 1200x630 PNG', () => {
