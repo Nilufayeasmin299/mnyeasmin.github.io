@@ -67,6 +67,14 @@ body {
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* Links inside sentences get an underline too, so color is not the only cue (WCAG 1.4.1). */
+.bio a, .news-item div a, .page-head p a, .group-intro a, .project-body p a, .callout a, .outside a {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(31, 79, 160, .45);
+}
+.bio a:hover, .news-item div a:hover, .page-head p a:hover, .group-intro a:hover, .project-body p a:hover, .callout a:hover, .outside a:hover {
+  text-decoration-color: currentColor;
+}
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 img { display: block; max-width: 100%; height: auto; }
 [hidden] { display: none !important; }

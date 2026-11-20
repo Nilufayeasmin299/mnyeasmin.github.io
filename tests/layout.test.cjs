@@ -52,6 +52,17 @@ test('navigation landmarks have unique names', async () => {
   assert.equal(new Set(labels).size, labels.length, `duplicate nav names: ${labels.join(', ')}`);
 });
 
+test('links inside running text are underlined, not marked by color alone', async () => {
+  const { page: pubs, context } = await openPage(browser, origin, '/publications/');
+  const homeDecorations = await page.locator('.news-item div a').evaluateAll(
+    (links) => links.map((a) => getComputedStyle(a).textDecorationLine),
+  );
+  const introDecoration = await pubs.locator('.page-head p a').evaluate((a) => getComputedStyle(a).textDecorationLine);
+  await context.close();
+  assert.ok(homeDecorations.length > 0, 'no links found in news text');
+  for (const d of [...homeDecorations, introDecoration]) assert.match(d, /underline/);
+});
+
 test('skip link targets main', async () => {
   assert.equal(await page.locator('a.skip').getAttribute('href'), '#main');
   assert.equal(await page.locator('main#main').count(), 1);
