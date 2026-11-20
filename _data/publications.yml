@@ -48,6 +48,7 @@
   type: journal
   status: published
   doi: 10.1186/s13635-025-00219-1
+  code: https://github.com/Nilufayeasmin299/Ensemble-Learning-for-Phishing-Websites-Detection
   image: /assets/img/pubs/enlem.jpg
   image_alt: EnLeM ensemble learning framework from data preprocessing to evaluation
   image_w: 685
@@ -83,6 +84,10 @@
   type: journal
   status: published
   doi: 10.12688/f1000research.144871.1
+  image: /assets/img/pubs/f1000.jpg
+  image_alt: Integrative machine-learning pipeline for biological sequence analysis
+  image_w: 800
+  image_h: 832
 
 - key: bbi2023
   title: "Molecular Biomarker Identification Using a Network-Based Bioinformatics Approach that Links COVID-19 with Smoking"
@@ -95,6 +100,10 @@
   type: journal
   status: published
   doi: 10.1177/11779322231186481
+  image: /assets/img/pubs/bbi.jpg
+  image_alt: Protein-protein interaction network linking COVID-19 and smoking biomarkers
+  image_w: 800
+  image_h: 477
 
 - key: bdcc2022
   title: "Analysis and Prediction of User Sentiment on COVID-19 Pandemic Using Tweets"
@@ -106,6 +115,11 @@
   type: journal
   status: published
   doi: 10.3390/bdcc6020065
+  code: https://github.com/Nilufayeasmin299/Final-Year-Complete-Project-Covid19-twitter-sentiment-analysis-using-deep-learning-methods-
+  image: /assets/img/pubs/bdcc.jpg
+  image_alt: Methodology for sentiment analysis of COVID-19 tweets
+  image_w: 800
+  image_h: 485
 
 - key: iccit2022breast
   title: "A Comparative Analysis of Machine Learning Techniques on Breast Cancer Diagnosis Using WEKA"

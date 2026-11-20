@@ -1,0 +1,50 @@
+---
+title: Research
+description: Research projects by Most Nilufa Yeasmin in geometric computer vision and pose estimation, medical image analysis, and earlier work in cybersecurity, NLP and bioinformatics.
+nav: research
+permalink: /research/
+redirect_from:
+  - /projects.html
+---
+{%- assign r = site.data.research -%}
+<div class="container narrow">
+  <header class="page-head">
+    <h1>Research</h1>
+    <p>{{ r.intro }}</p>
+  </header>
+  {%- for g in r.groups %}
+  <section class="group">
+    <h2>{{ g.title }}</h2>
+    {%- if g.intro %}
+    <p class="group-intro">{{ g.intro }}</p>
+    {%- endif %}
+    <div class="projects">
+      {%- for pr in g.projects %}
+      {%- assign pub = nil -%}
+      {%- if pr.pub -%}{%- assign pub = site.data.publications | where: "key", pr.pub | first -%}{%- endif -%}
+      {%- assign img = pr.image | default: pub.image -%}
+      {%- assign img_alt = pr.image_alt | default: pub.image_alt -%}
+      <article class="project{% unless img %} no-image{% endunless %}">
+        {%- if img %}
+        <div class="thumb"><img src="{{ img | relative_url }}" alt="{{ img_alt }}"{% if pub.image_w %} width="{{ pub.image_w }}" height="{{ pub.image_h }}"{% endif %} loading="lazy" decoding="async"></div>
+        {%- endif %}
+        <div class="project-body">
+          <h3>{{ pr.title }}</h3>
+          <p class="meta">{{ pr.period }}</p>
+          <p>{{ pr.text }}</p>
+          <ul class="tags">{% for t in pr.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+          {%- if pub.doi or pub.arxiv or pub.code or pr.links %}
+          <div class="pub-links">
+            {%- if pub.doi %}<a class="btn" href="https://doi.org/{{ pub.doi }}">Paper</a>{% endif %}
+            {%- if pub.arxiv %}<a class="btn" href="https://arxiv.org/abs/{{ pub.arxiv }}">arXiv</a>{% endif %}
+            {%- if pub.code %}<a class="btn" href="{{ pub.code }}">Code</a>{% endif %}
+            {%- for l in pr.links %}<a class="btn" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+          </div>
+          {%- endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endfor %}
+</div>
