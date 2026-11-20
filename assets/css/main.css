@@ -1,0 +1,145 @@
+/* ==========================================================================
+   mnyeasmin.com
+   Fonts (SIL Open Font License, see assets/fonts/LICENSE-*.txt), tokens, base,
+   header, footer. Page sections follow below their own banners.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-wght-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/newsreader-latin-standard-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+}
+
+:root {
+  --bg: #F4F6F9;
+  --card: #FFFFFF;
+  --ink: #0E1A2B;
+  --text: #3B4657;
+  --muted: #687386;
+  --line: #E2E7EE;
+  --accent: #1F4FA0;
+  --accent-ink: #173C7A;
+  --accent-soft: #EAF0FA;
+  --warm: #9A5410;
+  --warm-soft: #FBF1E4;
+  --green: #1D6B47;
+  --green-soft: #E6F4EC;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --maxw: 1200px;
+  --gutter: 32px;
+}
+
+/* Base ------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { color: var(--ink); }
+.icon { width: 16px; height: 16px; flex: none; }
+.container { max-width: var(--maxw); margin: 0 auto; padding: 48px var(--gutter) 72px; }
+
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 8px; font-weight: 600;
+}
+.skip:focus { top: 12px; }
+
+/* Header ---------------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 255, 255, .92);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-in {
+  max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); height: 64px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); letter-spacing: -.005em;
+}
+.brand:hover { text-decoration: none; }
+.brand-mark { width: 26px; height: 26px; flex: none; }
+
+.menu { display: flex; gap: 2px; }
+.menu a { padding: 8px 14px; border-radius: 8px; color: var(--text); font-size: 15px; font-weight: 500; }
+.menu a:hover { background: #F0F3F7; color: var(--ink); text-decoration: none; }
+.menu a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
+
+.menu-mobile { display: none; position: relative; }
+.menu-mobile summary {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none;
+  padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card);
+  font: 500 14px var(--sans); color: var(--ink);
+}
+.menu-mobile summary::-webkit-details-marker { display: none; }
+.menu-mobile nav {
+  position: absolute; right: 0; top: calc(100% + 8px); min-width: 220px; padding: 6px;
+  display: flex; flex-direction: column;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(16, 24, 40, .12);
+}
+.menu-mobile nav a { padding: 10px 12px; border-radius: 8px; color: var(--text); font-weight: 500; }
+.menu-mobile nav a:hover { background: #F0F3F7; text-decoration: none; }
+.menu-mobile nav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
+
+/* Footer ---------------------------------------------------------------- */
+.site-footer { border-top: 1px solid var(--line); background: var(--card); }
+.footer-in {
+  max-width: var(--maxw); margin: 0 auto; padding: 22px var(--gutter);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  font-size: 13.5px; color: var(--muted);
+}
+.footer-in p { margin: 0; }
+.footer-in nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-in a { color: var(--muted); }
+.footer-in a:hover { color: var(--accent); }
+
+/* Responsive shell -------------------------------------------------------- */
+@media (max-width: 960px) {
+  :root { --gutter: 20px; }
+  .menu { display: none; }
+  .menu-mobile { display: block; }
+  .container { padding-top: 28px; padding-bottom: 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-width="2.2" aria-hidden="true" focusable="false">
+        <path d="M16 17 L27 23" stroke="#1F4FA0"/><path d="M16 17 L16 4.5" stroke="#1F4FA0"/><path d="M16 17 L5 23" stroke="#9A5410"/>
+        <circle cx="16" cy="17" r="2.6" fill="#0E1A2B"/>
+      </svg>
+      <span>{{ site.data.profile.short_name }}</span>
+    </a>
+    <nav class="menu" aria-label="Main">{% include nav-links.html %}</nav>
+    <details class="menu-mobile">
+      <summary>{% include icon.html name="menu" %}<span>Menu</span></summary>
+      <nav aria-label="Main">{% include nav-links.html %}</nav>
+    </details>
+  </div>
+</header>

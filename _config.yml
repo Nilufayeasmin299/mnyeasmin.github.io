@@ -1,0 +1,37 @@
+title: Most Nilufa Yeasmin
+description: >-
+  Most Nilufa Yeasmin is a Ph.D. student in Computer Science at South Dakota State
+  University working on geometric computer vision: camera pose estimation, neural
+  solvers and pose awareness in visual foundation models.
+url: https://mnyeasmin.com
+baseurl: ""
+lang: en
+timezone: America/Chicago
+
+# No theme: every layout and style lives in this repository.
+theme: null
+
+author:
+  name: Most Nilufa Yeasmin
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tests
+  - docs
+  - node_modules
+  - package.json
+  - package-lock.json
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,0 +1,7 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- assign v = site.time | date: "%s" %}
+<link rel="preload" href="{{ '/assets/fonts/inter-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/newsreader-latin-standard-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ v }}">
+{% seo %}

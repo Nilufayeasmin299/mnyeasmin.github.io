@@ -1,0 +1,6 @@
+{%- for item in site.data.navigation -%}
+<a href="{{ item.url | relative_url }}"{% if page.nav == item.key %} aria-current="page"{% endif %}>{{ item.title }}</a>
+{%- endfor -%}
+{%- if site.data.profile.cv and site.data.profile.cv != "" -%}
+<a href="{{ site.data.profile.cv | relative_url }}">CV</a>
+{%- endif -%}

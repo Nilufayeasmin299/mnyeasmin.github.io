@@ -1,0 +1,16 @@
+name: Most Nilufa Yeasmin
+short_name: M. N. Yeasmin
+
+# Shown as "user [at] domain" in the page and turned into a mailto: link by JavaScript.
+email:
+  user: MostNilufa.Yeasmin
+  domain: jacks.sdstate.edu
+
+# Public CV. Leave empty ("") to hide the CV menu item and button.
+cv: /assets/cv/Most_Nilufa_Yeasmin_CV.pdf
+
+links:
+  scholar: https://scholar.google.com/citations?user=TjeXLLMAAAAJ&hl=en
+  github: https://github.com/Nilufayeasmin299
+  linkedin: https://www.linkedin.com/in/nilufayeasmin299/
+  orcid: https://orcid.org/0009-0009-0889-1470

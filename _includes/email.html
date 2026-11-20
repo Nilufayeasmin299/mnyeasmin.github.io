@@ -1,0 +1,7 @@
+{%- comment -%}
+  Obfuscated email link. Without JavaScript it reads "user [at] domain [dot] tld" and is not a link;
+  assets/js/main.js turns it into a mailto: link and, if `label` is given, shows the label instead.
+  Usage: {% include email.html class="pill" label="Email" icon=true %}
+{%- endcomment -%}
+{%- assign e = site.data.profile.email -%}
+<a class="js-email{% if include.class %} {{ include.class }}{% endif %}" data-user="{{ e.user }}" data-domain="{{ e.domain }}"{% if include.label %} data-label="{{ include.label }}"{% endif %}>{% if include.icon %}{% include icon.html name="mail" %}{% endif %}<span class="js-email-text">{{ e.user }} [at] {{ e.domain | replace: ".", " [dot] " }}</span></a>

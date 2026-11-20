@@ -1,0 +1,16 @@
+# Main menu, in order. The CV item is added after these when profile.cv is set.
+- key: about
+  title: About
+  url: /
+- key: publications
+  title: Publications
+  url: /publications/
+- key: research
+  title: Research
+  url: /research/
+- key: experience
+  title: Experience
+  url: /experience/
+- key: news
+  title: News
+  url: /news/
