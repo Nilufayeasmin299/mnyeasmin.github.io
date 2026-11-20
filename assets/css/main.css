@@ -400,3 +400,13 @@ h1, h2, h3 { color: var(--ink); }
   .tl-card { padding: 14px 16px; }
   .rows li, .skill-list > div { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 12px 16px; }
 }
+
+/* ==========================================================================
+   News archive and 404
+   ========================================================================== */
+.news-year { margin-top: 34px; }
+.news-year h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; letter-spacing: -.01em; margin: 0 0 12px; }
+.notfound { min-height: 50vh; }
+.notfound h1 { font-family: var(--serif); font-weight: 500; font-size: 46px; margin: 0 0 10px; }
+.notfound p { color: var(--muted); }
+.notfound-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }

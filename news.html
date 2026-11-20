@@ -1,0 +1,34 @@
+---
+title: News
+description: News from Most Nilufa Yeasmin's research, teaching and service, newest first.
+nav: news
+permalink: /news/
+---
+<div class="container narrow">
+  <header class="page-head">
+    <h1>News</h1>
+    <p>Papers, milestones, teaching and service, newest first.</p>
+  </header>
+  {%- assign current = "" -%}
+  {%- for item in site.data.news -%}
+  {%- if item.display -%}{%- assign y = item.display | slice: 0, 4 -%}{%- else -%}{%- assign y = item.date | date: "%Y" -%}{%- endif -%}
+  {%- if y != current -%}
+  {%- unless forloop.first %}
+      </ul>
+    </div>
+  </section>
+  {%- endunless %}
+  <section class="news-year">
+    <h2>{{ y }}</h2>
+    <div class="card news">
+      <ul>
+  {%- assign current = y -%}
+  {%- endif %}
+        {% include news-item.html item=item %}
+  {%- if forloop.last %}
+      </ul>
+    </div>
+  </section>
+  {%- endif -%}
+  {%- endfor %}
+</div>
