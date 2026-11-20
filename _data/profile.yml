@@ -1,5 +1,20 @@
 name: Most Nilufa Yeasmin
 short_name: M. N. Yeasmin
+role: Ph.D. Student in Computer Science
+field: Geometric Computer Vision
+
+affiliation:
+  name: South Dakota State University
+  url: https://www.sdstate.edu/
+advisor:
+  name: Dr. Ruyi Lian
+  url: https://ruyilian.github.io/
+lab:
+  name: 3D Perception and Scientific Imaging Laboratory
+  url: https://www.sdstate.edu/mccomish-electrical-engineering-computer-science/3d-perception-scientific-imaging-laboratory
+
+location: Brookings, South Dakota
+photo: /assets/img/headshot.jpg
 
 # Shown as "user [at] domain" in the page and turned into a mailto: link by JavaScript.
 email:
@@ -14,3 +29,58 @@ links:
   github: https://github.com/Nilufayeasmin299
   linkedin: https://www.linkedin.com/in/nilufayeasmin299/
   orcid: https://orcid.org/0009-0009-0889-1470
+
+# Copy these from Google Scholar and update as_of when you do.
+stats:
+  citations: 316
+  h_index: 6
+  i10_index: 4
+  as_of: Nov 2026
+
+internship: "I am looking for summer 2027 research internships in 3D computer vision and pose estimation. If your team has an opening, I would be glad to hear from you."
+
+interests:
+  - Camera Pose Estimation
+  - 3D Reconstruction
+  - Multi-view Geometry
+  - Geometric Deep Learning
+  - Neural Solvers
+  - Vision Foundation Models
+  - Medical Image Analysis
+
+education:
+  - degree: Ph.D., Computer Science
+    school: South Dakota State University
+    years: 2026 – present
+  - degree: B.Sc., Information & Communication Technology
+    school: Islamic University, Bangladesh
+    years: 2016 – 2020
+
+quick_facts:
+  - icon: briefcase
+    text: Graduate Research Assistant, SDSU
+  - icon: book
+    text: Teaching Assistant, CSC 325 and CSC 445
+  - icon: check
+    text: Ad hoc reviewer, PLOS ONE
+  - icon: users
+    text: ACM Professional Member
+  - icon: pin
+    text: Brookings, South Dakota
+
+# Homepage bio, one entry per paragraph (HTML allowed).
+bio:
+  - >-
+    I am a Ph.D. student in Computer Science at South Dakota State University, where I work with
+    Dr. Ruyi Lian. My research is in geometric computer vision. I develop neural solvers for camera
+    pose estimation that hold up under high outlier ratios and image noise, and I build benchmarks
+    that test how well visual foundation models understand pose and 3D structure.
+  - >-
+    Before my Ph.D., I earned a B.Sc. in Information and Communication Technology from Islamic
+    University, Bangladesh, and worked as a research assistant at the BUBT Research and Innovation
+    Center in Dhaka. That earlier work spans medical image analysis, cybersecurity, and natural
+    language processing, with papers in <em>EURASIP Journal on Information Security</em>,
+    <em>Array</em> (Elsevier), <em>Bioinformatics and Biology Insights</em>, and <em>Big Data and
+    Cognitive Computing</em>.
+
+outside: "Outside research, I love cinema, mostly Bollywood dramas but also international films from Korean thrillers to quiet arthouse dramas. Away from the keyboard you will usually find me on a long walk, cooking Bangladeshi dishes like bhuna khichuri, or listening to old Bangla folk songs."

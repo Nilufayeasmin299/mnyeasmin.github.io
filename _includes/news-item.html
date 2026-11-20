@@ -1,0 +1,15 @@
+{%- comment -%} One news row: {% include news-item.html item=item %} {%- endcomment -%}
+{%- assign n = include.item -%}
+{%- assign tone = "" -%}
+{%- case n.kind -%}
+{%- when "paper" -%}{%- assign label = "Paper" -%}{%- assign tone = "green" -%}
+{%- when "preprint" -%}{%- assign label = "Preprint" -%}{%- assign tone = "warm" -%}
+{%- when "review" -%}{%- assign label = "Under review" -%}{%- assign tone = "warm" -%}
+{%- when "teaching" -%}{%- assign label = "Teaching" -%}
+{%- when "milestone" -%}{%- assign label = "Milestone" -%}
+{%- when "member" -%}{%- assign label = "Member" -%}
+{%- when "service" -%}{%- assign label = "Service" -%}
+{%- endcase -%}
+{%- if n.display -%}{%- assign shown = n.display -%}{%- assign machine = n.display -%}
+{%- else -%}{%- assign shown = n.date | date: "%b %Y" -%}{%- assign machine = n.date | date: "%Y-%m" -%}{%- endif -%}
+<li class="news-item"><time datetime="{{ machine }}">{{ shown }}</time><div><span class="kind{% if tone != '' %} {{ tone }}{% endif %}">{{ label }}</span>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</div></li>

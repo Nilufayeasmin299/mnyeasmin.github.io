@@ -1,6 +1,100 @@
 ---
 nav: about
+body_class: home-page
 ---
-<div class="container">
-  <h1>Most Nilufa Yeasmin</h1>
+{%- assign pr = site.data.profile -%}
+<div class="home">
+
+  <div class="photo card">
+    <img src="{{ pr.photo | relative_url }}" alt="Portrait of {{ pr.name }}" width="640" height="800" fetchpriority="high">
+  </div>
+
+  <div class="main-col">
+    <div class="hero">
+      <h1>{{ pr.name }}</h1>
+      <p class="role">{{ pr.role }} · {{ pr.field }}</p>
+      <p class="aff"><a href="{{ pr.affiliation.url }}">{{ pr.affiliation.name }}</a><span class="dot" aria-hidden="true">·</span>Advised by <a href="{{ pr.advisor.url }}">{{ pr.advisor.name }}</a></p>
+      <p class="aff muted"><a href="{{ pr.lab.url }}">{{ pr.lab.name }}</a></p>
+    </div>
+
+    <div class="pills">
+      {% include email.html class="pill" label="Email" icon=true %}
+      <a class="pill" href="{{ pr.links.scholar }}">{% include icon.html name="scholar" %}<span>Google Scholar</span></a>
+      <a class="pill" href="{{ pr.links.github }}">{% include icon.html name="github" %}<span>GitHub</span></a>
+      <a class="pill" href="{{ pr.links.linkedin }}">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a>
+      <a class="pill" href="{{ pr.links.orcid }}">{% include icon.html name="orcid" %}<span>ORCID</span></a>
+      {%- if pr.cv and pr.cv != "" %}
+      <a class="pill cv" href="{{ pr.cv | relative_url }}">{% include icon.html name="file" %}<span>CV (PDF)</span></a>
+      {%- endif %}
+    </div>
+
+    {%- if pr.internship and pr.internship != "" %}
+    <p class="callout">{% include icon.html name="briefcase" %}<span>{{ pr.internship }}</span></p>
+    {%- endif %}
+
+    <div class="bio">
+      {%- for para in pr.bio %}
+      <p>{{ para }}</p>
+      {%- endfor %}
+    </div>
+    <ul class="tags" aria-label="Research interests">
+      {%- for t in pr.interests %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+
+    <section class="block" aria-labelledby="news-heading">
+      <div class="block-head"><h2 id="news-heading">Recent news</h2><a href="{{ '/news/' | relative_url }}">All news →</a></div>
+      <div class="card news">
+        <ul>
+          {%- for item in site.data.news limit: 6 %}
+          {% include news-item.html item=item %}
+          {%- endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="highlights-heading">
+      <div class="block-head"><h2 id="highlights-heading">Research highlights</h2><a href="{{ '/publications/' | relative_url }}">All publications →</a></div>
+      <div class="hl">
+        {%- assign highlights = site.data.publications | where_exp: "p", "p.highlight" | sort: "highlight" %}
+        {%- for p in highlights %}
+        {% include highlight-card.html pub=p %}
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="outside" aria-labelledby="outside-heading">
+      <h2 class="label" id="outside-heading">Outside the lab</h2>
+      <p>{{ pr.outside }}</p>
+    </section>
+  </div>
+
+  <aside class="facts card" aria-label="Profile facts">
+    <section>
+      <h2 class="label">Education</h2>
+      <ul class="tl">
+        {%- for e in pr.education %}
+        <li><b>{{ e.degree }}</b><span>{{ e.school }}</span><span class="years">{{ e.years }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    <section>
+      <h2 class="label">At a glance</h2>
+      <div class="stats">
+        <div class="stat"><strong>{{ pr.stats.citations }}</strong><span>Citations</span></div>
+        <div class="stat"><strong>{{ pr.stats.h_index }}</strong><span>h-index</span></div>
+        <div class="stat"><strong>{{ pr.stats.i10_index }}</strong><span>i10-index</span></div>
+      </div>
+      <p class="stats-note"><a href="{{ pr.links.scholar }}">Google Scholar</a> · {{ pr.stats.as_of }}</p>
+    </section>
+    <section>
+      <h2 class="label">Quick facts</h2>
+      <ul class="qf">
+        {%- for f in pr.quick_facts %}
+        <li>{% include icon.html name=f.icon %}<span>{{ f.text }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+  </aside>
+
 </div>
+{% include person-jsonld.html %}

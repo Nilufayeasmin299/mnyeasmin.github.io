@@ -1,0 +1,48 @@
+# Newest first: add new items at the TOP. The homepage shows the first six.
+# kind: paper | preprint | review | teaching | milestone | member | service
+# `display` replaces the shown date (for items with only a year).
+
+- date: 2026-11-01
+  kind: preprint
+  text: '"PoseBench: Probing Pose Awareness in Visual Foundation Models" is now on [arXiv](https://arxiv.org/abs/2611.10347).'
+
+- date: 2026-09-01
+  kind: member
+  text: Joined the ACM as a Professional Member.
+
+- date: 2026-08-01
+  kind: teaching
+  text: Started as a Graduate Teaching Assistant for CSC 325 (Management Information Systems) and CSC 445 (Introduction to Theory of Computation).
+
+- date: 2026-06-01
+  kind: review
+  text: DeepOnP, with Lu Pang and Ruyi Lian, submitted to *Pattern Recognition Letters*.
+
+- date: 2026-01-01
+  kind: milestone
+  text: Began my Ph.D. in Computer Science at South Dakota State University, advised by Dr. Ruyi Lian.
+
+- date: 2025-12-01
+  kind: paper
+  text: '"[EnLeM: An Ensemble Learning-based Model for Detecting Phishing Websites](https://doi.org/10.1186/s13635-025-00219-1)" published in *EURASIP Journal on Information Security*.'
+
+- date: 2025-12-01
+  kind: milestone
+  text: Completed a research assistantship at the BUBT Research and Innovation Center, Dhaka.
+
+- date: 2024-07-01
+  kind: paper
+  text: Review "[Advances of AI in Image-Based Computer-Aided Diagnosis](https://doi.org/10.1016/j.array.2024.100357)" published in *Array* (Elsevier).
+
+- date: 2024-03-01
+  kind: paper
+  text: Co-authored [paper on high-throughput biological sequence analysis](https://doi.org/10.12688/f1000research.144871.1) published in *F1000Research*.
+
+- date: 2024-01-01
+  display: "2024"
+  kind: service
+  text: Began reviewing for *PLOS ONE*.
+
+- date: 2023-06-01
+  kind: paper
+  text: Co-authored [article linking COVID-19 and smoking through network-based biomarkers](https://doi.org/10.1177/11779322231186481) published in *Bioinformatics and Biology Insights*.

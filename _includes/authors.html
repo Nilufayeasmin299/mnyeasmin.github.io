@@ -1,0 +1,5 @@
+{%- comment -%} Author list with the site owner's name in bold: {% include authors.html authors=pub.authors %} {%- endcomment -%}
+{%- for a in include.authors -%}
+{%- if a == site.data.profile.name -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}
+{%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}

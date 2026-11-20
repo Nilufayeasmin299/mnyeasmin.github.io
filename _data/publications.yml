@@ -1,0 +1,154 @@
+# Every paper, once. The homepage shows entries with `highlight` (in that order);
+# the Publications page groups the rest by type and status.
+#   type:   journal | conference | preprint
+#   status: published | under_review | preprint
+# Optional: doi, arxiv, code, publisher, pages, image (+ image_alt, image_w, image_h), highlight, summary.
+
+- key: posebench2026
+  title: "PoseBench: Probing Pose Awareness in Visual Foundation Models"
+  authors: [Most Nilufa Yeasmin, Draix Wyatt, Ruyi Lian]
+  venue: arXiv preprint
+  venue_short: arXiv
+  year: 2026
+  month: 11
+  type: preprint
+  status: preprint
+  arxiv: "2611.10347"
+  image: /assets/img/pubs/posebench.jpg
+  image_alt: PoseBench pose retrieval examples, before and after graph refinement
+  image_w: 510
+  image_h: 520
+  highlight: 1
+  summary: A benchmark that tests how well visual foundation models understand pose and geometry.
+
+- key: deeponp2026
+  title: "DeepOnP: Outlier-Resilient Neural Solver for the Orthographic-n-Point Problem"
+  authors: [Lu Pang, Most Nilufa Yeasmin, Ruyi Lian]
+  venue: Pattern Recognition Letters
+  venue_short: Pattern Recognition Letters
+  year: 2026
+  month: 6
+  type: journal
+  status: under_review
+  image: /assets/img/pubs/deeponp.jpg
+  image_alt: DeepOnP pipeline with keypoint localization and a neural minimal solver
+  image_w: 737
+  image_h: 321
+  highlight: 2
+  summary: Neural pose estimation that uses top-K rotation hypotheses and quaternion averaging to stay accurate under heavy outliers.
+
+- key: enlem2025
+  title: "EnLeM: An Ensemble Learning-based Model for Detecting Phishing Websites"
+  authors: [Most Nilufa Yeasmin, Md Abu Rumman Refat, Bikash Chandra Singh, Zulfikar Alom, Zeyar Aung, Mohammad Abdul Azim]
+  venue: EURASIP Journal on Information Security
+  venue_short: EURASIP J. Information Security
+  publisher: Springer Nature
+  year: 2025
+  month: 12
+  type: journal
+  status: published
+  doi: 10.1186/s13635-025-00219-1
+  image: /assets/img/pubs/enlem.jpg
+  image_alt: EnLeM ensemble learning framework from data preprocessing to evaluation
+  image_w: 685
+  image_h: 321
+  highlight: 3
+  summary: Combines several classifiers in an ensemble to detect phishing websites.
+
+- key: cadreview2024
+  title: "Advances of AI in Image-Based Computer-Aided Diagnosis: A Review"
+  authors: [Most Nilufa Yeasmin, Md Al Amin, Tasmim Jamal Joti, Zeyar Aung, Mohammad Abdul Azim]
+  venue: Array
+  venue_short: Array (Elsevier)
+  publisher: Elsevier
+  year: 2024
+  month: 7
+  type: journal
+  status: published
+  doi: 10.1016/j.array.2024.100357
+  image: /assets/img/pubs/cad-architecture.jpg
+  image_alt: Overall architecture of a computer-aided diagnosis system, from patient to treatment
+  image_w: 661
+  image_h: 323
+  highlight: 4
+  summary: A review of recent AI methods for image-based computer-aided diagnosis.
+
+- key: f1000research2024
+  title: "High Throughput Biological Sequence Analysis Using Machine Learning-Based Integrative Pipeline for Extracting Functional Annotation and Visualization"
+  authors: [Md Al Amin, Feroza Naznin, Most Nilufa Yeasmin, Md Sumon Sarkar, Md Misor Mia, Abdullahi Chowdhury, Md Zahidul Islam]
+  venue: F1000Research
+  venue_short: F1000Research
+  year: 2024
+  month: 3
+  type: journal
+  status: published
+  doi: 10.12688/f1000research.144871.1
+
+- key: bbi2023
+  title: "Molecular Biomarker Identification Using a Network-Based Bioinformatics Approach that Links COVID-19 with Smoking"
+  authors: [Md Anisur Rahman, Md Al Amin, Most Nilufa Yeasmin, Md Zahidul Islam]
+  venue: Bioinformatics and Biology Insights
+  venue_short: Bioinformatics and Biology Insights
+  publisher: SAGE Publications
+  year: 2023
+  month: 6
+  type: journal
+  status: published
+  doi: 10.1177/11779322231186481
+
+- key: bdcc2022
+  title: "Analysis and Prediction of User Sentiment on COVID-19 Pandemic Using Tweets"
+  authors: [Most Nilufa Yeasmin, Nosin Ibne Mahbub, Mrinal Kanti Baowaly, Bikash Chandra Singh, Zulfikar Alom, Zeyar Aung, Mohammad Abdul Azim]
+  venue: Big Data and Cognitive Computing
+  venue_short: Big Data and Cognitive Computing
+  year: 2022
+  month: 6
+  type: journal
+  status: published
+  doi: 10.3390/bdcc6020065
+
+- key: iccit2022breast
+  title: "A Comparative Analysis of Machine Learning Techniques on Breast Cancer Diagnosis Using WEKA"
+  authors: [A. Rashid, S. S. Binta Farhad, A. Bhuyian, Most Nilufa Yeasmin, M. A. Azim, Z. Alom]
+  venue: 25th International Conference on Computer and Information Technology (ICCIT)
+  venue_short: ICCIT 2022
+  year: 2022
+  type: conference
+  status: published
+  pages: 663–668
+  doi: 10.1109/ICCIT57492.2022.10055421
+
+- key: iccit2022idh1
+  title: "Prediction of IDH1 Gene Expression in Glioblastoma Using Machine Learning Techniques"
+  authors: [S. S. Shawon, S. Afrin, Most Nilufa Yeasmin, M. A. Azim, Z. Alom]
+  venue: 25th International Conference on Computer and Information Technology (ICCIT)
+  venue_short: ICCIT 2022
+  year: 2022
+  type: conference
+  status: published
+  pages: 336–341
+  doi: 10.1109/ICCIT57492.2022.10054918
+
+- key: ispcc2021
+  title: "A Comparative Analysis of Early-Stage Diabetes Prediction Using Machine Learning and Deep Learning Approach"
+  authors: [Md Abu Rumman Refat, Md Al Amin, Chetna Kaushal, Most Nilufa Yeasmin, Md Khairul Islam]
+  venue: 6th International Conference on Signal Processing, Computing and Control (ISPCC)
+  venue_short: ISPCC 2021
+  year: 2021
+  month: 10
+  type: conference
+  status: published
+  pages: 654–659
+  doi: 10.1109/ISPCC53510.2021.9609364
+
+- key: icrito2021
+  title: "Comparative Analysis of Steering Angle Prediction for Automated Object Using Deep Neural Network"
+  authors: [Md Khairul Islam, Most Nilufa Yeasmin, Chetna Kaushal, Md Al Amin, Md Rakibul Islam, Md Imran Hossain Showrov]
+  venue: 9th International Conference on Reliability, Infocom Technologies and Optimization (ICRITO)
+  venue_short: ICRITO 2021
+  year: 2021
+  month: 9
+  type: conference
+  status: published
+  pages: 1–7
+  doi: 10.1109/ICRITO51393.2021.9596499

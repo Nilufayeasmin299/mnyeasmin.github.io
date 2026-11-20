@@ -1,0 +1,19 @@
+{%- comment -%} Homepage paper card: {% include highlight-card.html pub=p %} {%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- if p.doi -%}{%- assign href = "https://doi.org/" | append: p.doi -%}
+{%- elsif p.arxiv -%}{%- assign href = "https://arxiv.org/abs/" | append: p.arxiv -%}
+{%- else -%}{%- capture href -%}{{ '/publications/' | relative_url }}#{{ p.key }}{%- endcapture -%}{%- endif -%}
+<a class="card hl-card" href="{{ href }}">
+  {%- if p.image %}
+  <div class="thumb"><img src="{{ p.image | relative_url }}" alt="{{ p.image_alt }}" width="{{ p.image_w }}" height="{{ p.image_h }}" loading="lazy" decoding="async"></div>
+  {%- endif %}
+  <div class="hl-body">
+    <div class="venue">
+      {%- if p.status == "preprint" -%}{{ p.venue_short }} {{ p.year }} · <span class="st">Preprint</span>
+      {%- elsif p.status == "under_review" -%}{{ p.venue_short }} · <span class="st">Under review</span>
+      {%- else -%}{{ p.venue_short }} · {{ p.year }}{%- endif -%}
+    </div>
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.summary }}</p>
+  </div>
+</a>

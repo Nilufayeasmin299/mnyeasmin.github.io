@@ -55,6 +55,7 @@ function startServer() {
 
 async function openPage(browser, origin, urlPath, { width = 1440, height = 900, javaScriptEnabled = true } = {}) {
   const context = await browser.newContext({ viewport: { width, height }, javaScriptEnabled });
+  context.setDefaultTimeout(5000); // static pages: anything missing after 5s is missing
   const page = await context.newPage();
   const requests = [];
   page.on('request', (request) => requests.push(request.url()));
