@@ -1,0 +1,23 @@
+{%- comment -%}
+  BibTeX for one paper. @misc for arXiv preprints, @inproceedings for conferences, @article otherwise.
+  No publisher field (keeps the output short and avoids naming proceedings publishers).
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign lb = "{" -%}{%- assign rb = "}" -%}
+{%- capture authors -%}{% for a in p.authors %}{{ a }}{% unless forloop.last %} and {% endunless %}{% endfor %}{%- endcapture -%}
+{%- if p.status == "preprint" -%}{%- assign kind = "misc" -%}
+{%- elsif p.type == "conference" -%}{%- assign kind = "inproceedings" -%}
+{%- else -%}{%- assign kind = "article" -%}{%- endif -%}
+{%- capture fields -%}
+title = {{ lb }}{{ p.title }}{{ rb }}~~author = {{ lb }}{{ authors }}{{ rb }}
+{%- if kind == "article" -%}~~journal = {{ lb }}{{ p.venue }}{{ rb }}{%- endif -%}
+{%- if kind == "inproceedings" -%}~~booktitle = {{ lb }}{{ p.venue }}{{ rb }}{%- endif -%}
+{%- if p.pages -%}~~pages = {{ lb }}{{ p.pages | replace: "–", "--" }}{{ rb }}{%- endif -%}
+~~year = {{ lb }}{{ p.year }}{{ rb }}
+{%- if p.doi -%}~~doi = {{ lb }}{{ p.doi }}{{ rb }}{%- endif -%}
+{%- if p.arxiv -%}~~eprint = {{ lb }}{{ p.arxiv }}{{ rb }}~~archivePrefix = {{ lb }}arXiv{{ rb }}{%- endif -%}
+{%- endcapture -%}
+@{{ kind }}{{ lb }}{{ p.key }},
+  {{ fields | split: "~~" | join: ",
+  " }}
+{{ rb }}

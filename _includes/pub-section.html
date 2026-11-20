@@ -1,0 +1,20 @@
+{%- comment -%}
+  One Publications section, newest first by year then month (a missing month sorts last in its year).
+  Usage: {% include pub-section.html title="Journal articles" list=journals %}
+{%- endcomment -%}
+{%- assign years = include.list | map: "year" | uniq | sort | reverse -%}
+<section class="pubs">
+  <h2>{{ include.title }}</h2>
+  <ol class="pub-list">
+    {%- for y in years -%}
+    {%- for m in (0..12) reversed -%}
+    {%- for p in include.list -%}
+    {%- assign pm = p.month | default: 0 -%}
+    {%- if p.year == y and pm == m %}
+    {% include pub-entry.html pub=p %}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endfor -%}
+    {%- endfor %}
+  </ol>
+</section>

@@ -1,0 +1,27 @@
+{%- comment -%} One paper on the Publications page: {% include pub-entry.html pub=p %} {%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign href = nil -%}
+{%- if p.doi -%}{%- assign href = "https://doi.org/" | append: p.doi -%}
+{%- elsif p.arxiv -%}{%- assign href = "https://arxiv.org/abs/" | append: p.arxiv -%}{%- endif -%}
+<li class="pub" id="{{ p.key }}">
+  <h3 class="pub-title">{% if href %}<a href="{{ href }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+  <p class="authors">{% include authors.html authors=p.authors %}</p>
+  <p class="pub-venue">
+    {%- if p.status == "preprint" -%}arXiv:{{ p.arxiv }}, {{ p.year }} <span class="badge warm">Preprint</span>
+    {%- elsif p.status == "under_review" -%}Submitted to <em>{{ p.venue }}</em>, {{ p.year }} <span class="badge warm">Under review</span>
+    {%- else -%}<em>{{ p.venue }}</em>{% if p.pages %}, pp. {{ p.pages }}{% endif %}, {{ p.year }}{%- endif -%}
+  </p>
+  <div class="pub-links">
+    {%- if p.doi %}<a class="btn" href="https://doi.org/{{ p.doi }}">Paper</a>{% endif %}
+    {%- if p.arxiv %}<a class="btn" href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>{% endif %}
+    {%- if p.code %}<a class="btn" href="{{ p.code }}">Code</a>{% endif %}
+    {%- unless p.status == "under_review" %}<button class="btn bib-toggle" type="button" aria-expanded="false" aria-controls="bib-{{ p.key }}" hidden>BibTeX</button>{% endunless %}
+  </div>
+  {%- unless p.status == "under_review" %}
+  {%- capture bib -%}{% include bibtex.html pub=p %}{%- endcapture %}
+  <div class="bib" id="bib-{{ p.key }}">
+    <pre class="bibtex">{{ bib | strip | xml_escape }}</pre>
+    <button class="btn bib-copy" type="button" hidden>{% include icon.html name="copy" %}<span>Copy</span></button>
+  </div>
+  {%- endunless %}
+</li>

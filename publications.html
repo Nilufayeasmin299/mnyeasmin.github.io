@@ -1,0 +1,23 @@
+---
+title: Publications
+description: Journal articles, conference papers and preprints by Most Nilufa Yeasmin, Ph.D. student in Computer Science at South Dakota State University.
+nav: publications
+permalink: /publications/
+redirect_from:
+  - /publications.html
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign preprints = pubs | where: "status", "preprint" -%}
+{%- assign in_review = pubs | where: "status", "under_review" -%}
+{%- assign first = preprints | concat: in_review -%}
+{%- assign journals = pubs | where: "type", "journal" | where: "status", "published" -%}
+{%- assign conferences = pubs | where: "type", "conference" -%}
+<div class="container narrow">
+  <header class="page-head">
+    <h1>Publications</h1>
+    <p>Newest first. My <a href="{{ site.data.profile.links.scholar }}">Google Scholar profile</a> lists citation counts.</p>
+  </header>
+  {% include pub-section.html title="Preprints and under review" list=first %}
+  {% include pub-section.html title="Journal articles" list=journals %}
+  {% include pub-section.html title="Conference papers" list=conferences %}
+</div>
