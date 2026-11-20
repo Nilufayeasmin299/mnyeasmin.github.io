@@ -134,6 +134,7 @@ test('text tokens meet WCAG AA (4.5:1)', () => {
     ['text', 'card'], ['text', 'bg'], ['muted', 'card'], ['muted', 'bg'], ['accent', 'card'], ['accent', 'bg'],
     ['accent', 'accent-soft'], ['accent-ink', 'accent-soft'], ['warm', 'warm-soft'], ['warm', 'card'],
     ['green', 'green-soft'], ['green', 'card'],
+    ['red-ink', 'red-soft'], ['red', 'red-soft'],
   ];
   for (const [fg, bg] of pairs) {
     const r = ratio(token(fg), token(bg));
