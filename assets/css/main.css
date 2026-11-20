@@ -50,6 +50,11 @@
   --red: #B42318;
   --red-ink: #8A1C1C;
   --red-soft: #FDF0F0;
+  --night: #0B0F17;
+  --night-text: #C9CED6;
+  --night-muted: #8B93A1;
+  --night-line: #262D3A;
+  --coral: #F07158;
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -71,11 +76,11 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Links inside sentences get an underline too, so color is not the only cue (WCAG 1.4.1). */
-.bio a, .news-item div a, .page-head p a, .group-intro a, .project-body p a, .callout a, .outside a {
+.bio a, .news-item div a, .page-head p a, .group-intro a, .project-body p a, .callout a, .personal a {
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
   text-decoration-color: rgba(31, 79, 160, .45);
 }
-.bio a:hover, .news-item div a:hover, .page-head p a:hover, .group-intro a:hover, .project-body p a:hover, .callout a:hover, .outside a:hover {
+.bio a:hover, .news-item div a:hover, .page-head p a:hover, .group-intro a:hover, .project-body p a:hover, .callout a:hover, .personal a:hover {
   text-decoration-color: currentColor;
 }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
@@ -274,19 +279,6 @@ h1, h2, h3 { color: var(--ink); }
 .hl-card h3 { font-size: 16.5px; font-weight: 600; line-height: 1.4; margin: 7px 0 6px; }
 .hl-card p { margin: 0; font-size: 14.5px; line-height: 1.6; }
 
-.outside-intro { margin: 0 0 16px; font-size: 16px; line-height: 1.7; }
-.hobbies { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.hobbies > li {
-  display: flex; gap: 14px; align-items: flex-start; padding: 16px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-}
-.h-icon { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); }
-.h-icon .icon { width: 21px; height: 21px; }
-.tone-red .h-icon { background: var(--red-soft); color: var(--red); }
-.tone-warm .h-icon { background: var(--warm-soft); color: var(--warm); }
-.tone-green .h-icon { background: var(--green-soft); color: var(--green); }
-.hobbies b { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-bottom: 2px; }
-.hobbies p { margin: 0; font-size: 14.5px; line-height: 1.55; }
 
 @media (max-width: 960px) {
   .home { grid-template-columns: 1fr; grid-template-areas: "photo" "main" "facts"; grid-template-rows: auto; padding-top: 28px; padding-bottom: 56px; row-gap: 26px; }
@@ -295,7 +287,6 @@ h1, h2, h3 { color: var(--ink); }
 }
 @media (max-width: 600px) {
   .hl { grid-template-columns: 1fr; }
-  .hobbies { grid-template-columns: 1fr; }
   .news { padding: 4px 18px; }
   .news-item { grid-template-columns: 1fr; gap: 2px; }
   .role { font-size: 17px; }
@@ -433,3 +424,51 @@ h1, h2, h3 { color: var(--ink); }
 .notfound h1 { font-family: var(--serif); font-weight: 500; font-size: 46px; margin: 0 0 10px; }
 .notfound p { color: var(--muted); }
 .notfound-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+/* ==========================================================================
+   Homepage: "Outside the lab / Personal" band
+   ========================================================================== */
+.personal {
+  background: var(--night); color: var(--night-text);
+  clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 100%);
+}
+.personal-in { max-width: var(--maxw); margin: 0 auto; padding: 112px var(--gutter) 88px; }
+.personal h2 { font-family: var(--serif); font-weight: 500; font-size: 48px; line-height: 1.1; letter-spacing: -.015em; color: #fff; margin: 0 0 12px; }
+.personal .accent-word { color: var(--coral); }
+.personal-intro { margin: 0 0 34px; max-width: 660px; font-size: 17px; line-height: 1.7; color: var(--night-muted); }
+.facets {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--night-line); border-radius: 4px;
+}
+.facets > li {
+  position: relative; display: flex; flex-direction: column; min-height: 236px; padding: 22px 22px 24px;
+  border-left: 1px solid var(--night-line); background: rgba(255, 255, 255, .02);
+}
+.facets > li:first-child { border-left: 0; }
+.facets .num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--night-muted); }
+.facets h3 { margin: 10px 0 0; padding-right: 64px; font-size: 22px; font-weight: 600; line-height: 1.25; color: #fff; }
+.facets .art { position: absolute; top: 18px; right: 18px; color: rgba(255, 255, 255, .3); }
+.facets .art .icon { width: 54px; height: 54px; stroke-width: .9; }
+.facets p { margin: auto 0 0; padding-top: 30px; font-size: 14.5px; line-height: 1.6; color: var(--night-muted); }
+
+/* The homepage footer continues the dark band. */
+.home-page .site-footer { background: var(--night); border-top-color: var(--night-line); }
+.home-page .footer-in, .home-page .footer-in a { color: var(--night-muted); }
+.home-page .footer-in a:hover { color: #fff; }
+
+@media (max-width: 960px) {
+  .personal-in { padding-top: 92px; }
+  .personal h2 { font-size: 38px; }
+  .facets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facets > li:nth-child(3) { border-left: 0; }
+  .facets > li:nth-child(n+3) { border-top: 1px solid var(--night-line); }
+}
+@media (max-width: 600px) {
+  .personal { clip-path: polygon(0 0, 100% 22px, 100% 100%, 0 100%); }
+  .personal-in { padding: 72px var(--gutter) 60px; }
+  .personal h2 { font-size: 32px; }
+  .facets { grid-template-columns: minmax(0, 1fr); }
+  .facets > li { min-height: 0; border-left: 0; }
+  .facets > li + li { border-top: 1px solid var(--night-line); }
+}

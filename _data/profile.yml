@@ -83,23 +83,19 @@ bio:
     <em>Array</em> (Elsevier), <em>Bioinformatics and Biology Insights</em>, and <em>Big Data and
     Cognitive Computing</em>.
 
-# "Outside the lab" section at the end of the homepage. tone: red | warm | accent | green
+# "Outside the lab / Personal" band at the bottom of the homepage (numbered tiles, in order).
 outside:
-  intro: When I am not working on pose estimation, I am usually somewhere between a film, a kitchen and a long walk.
+  intro: When I am not working on pose estimation, I am usually somewhere between a film, a kitchen and a good book.
   items:
     - icon: film
-      tone: red
       title: Cinema
       text: Bollywood dramas first, then anything from Korean thrillers to quiet arthouse films.
     - icon: soup
-      tone: warm
       title: Cooking
       text: Bangladeshi home cooking, from fish curry to bhuna khichuri with a fried egg and traditional desserts.
     - icon: music
-      tone: accent
       title: Music
       text: Old Bangla folk songs and film soundtracks, usually on repeat.
-    - icon: footprints
-      tone: green
-      title: Weekends
-      text: A long walk in nature with a good playlist.
+    - icon: book
+      title: Reading
+      text: A good book, whenever the week leaves room for one.

@@ -98,18 +98,25 @@ test('four highlights in order, each image with alt', async () => {
   for (const alt of alts) assert.ok(alt.length > 0);
 });
 
-test('outside-the-lab note', async () => {
-  assert.match(await page.locator('.outside').textContent(), /bhuna khichuri/);
+test('personal section is a full-width band after the two-column layout', async () => {
+  assert.equal(await page.locator('.main-col section.personal').count(), 0);
+  assert.equal(await page.locator('main > section.personal').count(), 1);
+  assert.equal(
+    (await page.locator('section.personal h2').textContent()).replace(/\s+/g, ' ').trim(),
+    'Outside the lab / Personal',
+  );
 });
 
-test('outside the lab shows four interests, each with an icon', async () => {
-  assert.equal((await page.locator('.outside h2').textContent()).trim(), 'Outside the lab');
+test('personal section: four numbered facets with icons, reading instead of walks', async () => {
   assert.deepEqual(
-    (await page.locator('.hobbies > li b').allTextContents()).map((s) => s.trim()),
-    ['Cinema', 'Cooking', 'Music', 'Weekends'],
+    (await page.locator('.facets > li h3').allTextContents()).map((s) => s.trim()),
+    ['Cinema', 'Cooking', 'Music', 'Reading'],
   );
-  assert.equal(await page.locator('.hobbies > li .h-icon svg path, .hobbies > li .h-icon svg rect, .hobbies > li .h-icon svg circle').count() > 0, true);
-  assert.equal(await page.locator('.hobbies > li .h-icon svg').count(), 4);
+  assert.deepEqual((await page.locator('.facets > li .num').allTextContents()).map((s) => s.trim()), ['01', '02', '03', '04']);
+  assert.equal(await page.locator('.facets > li .art svg').count(), 4);
+  const text = await page.locator('section.personal').textContent();
+  assert.match(text, /bhuna khichuri/);
+  assert.doesNotMatch(text, /walk/i);
 });
 
 test('Person JSON-LD with four sameAs links and SDSU affiliation', async () => {

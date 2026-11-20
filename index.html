@@ -64,15 +64,6 @@ redirect_from:
       </div>
     </section>
 
-    <section class="block outside" aria-labelledby="outside-heading">
-      <div class="block-head"><h2 id="outside-heading">Outside the lab</h2></div>
-      <p class="outside-intro">{{ pr.outside.intro }}</p>
-      <ul class="hobbies">
-        {%- for o in pr.outside.items %}
-        <li class="tone-{{ o.tone | default: 'accent' }}"><span class="h-icon">{% include icon.html name=o.icon %}</span><div><b>{{ o.title }}</b><p>{{ o.text }}</p></div></li>
-        {%- endfor %}
-      </ul>
-    </section>
   </div>
 
   <aside class="facts card" aria-label="Profile facts">
@@ -104,4 +95,21 @@ redirect_from:
   </aside>
 
 </div>
+
+<section class="personal" aria-labelledby="personal-heading">
+  <div class="personal-in">
+    <h2 id="personal-heading"><span class="accent-word">Outside the lab</span> / Personal</h2>
+    <p class="personal-intro">{{ pr.outside.intro }}</p>
+    <ul class="facets">
+      {%- for o in pr.outside.items %}
+      <li>
+        <span class="num">{{ forloop.index | prepend: "0" }}</span>
+        <h3>{{ o.title }}</h3>
+        <span class="art">{% include icon.html name=o.icon %}</span>
+        <p>{{ o.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
 {% include person-jsonld.html %}
