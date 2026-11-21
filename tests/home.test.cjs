@@ -119,6 +119,26 @@ test('personal section: four numbered facets with icons, reading instead of walk
   assert.doesNotMatch(text, /walk/i);
 });
 
+test('personal section matches the rest of the site: no dark band, normal footer, same heading style', async () => {
+  assert.equal(await page.locator('section.personal').evaluate((el) => getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)');
+  assert.equal(await page.locator('footer').evaluate((el) => getComputedStyle(el).backgroundColor), 'rgb(255, 255, 255)');
+  const style = (sel) => page.locator(sel).evaluate((el) => {
+    const c = getComputedStyle(el);
+    return [c.color, c.fontFamily, c.fontSize];
+  });
+  assert.deepEqual(await style('#personal-heading'), await style('#news-heading'));
+});
+
+test('personal copy: keyboard intro, Bollywood first, Bangali dishes, reading genres', async () => {
+  assert.match((await page.locator('.personal-intro').textContent()).trim(), /^When I am not at the keyboard/);
+  const tile = (t) => page.locator('.facets > li', { hasText: t }).locator('p');
+  assert.match((await tile('Cinema').textContent()).trim(), /^Bollywood movies/);
+  const cooking = await tile('Cooking').textContent();
+  for (const dish of ['Bangali', 'shorshe ilish', 'bhuna khichuri', 'morog polao', 'pitha']) assert.match(cooking, new RegExp(dish), dish);
+  const reading = await tile('Reading').textContent();
+  for (const genre of [/self-development/i, /thrillers/i, /romantic novel/i]) assert.match(reading, genre);
+});
+
 test('Person JSON-LD with four sameAs links and SDSU affiliation', async () => {
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
   const person = blocks.map((b) => JSON.parse(b)).find((o) => o['@type'] === 'Person');

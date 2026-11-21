@@ -83,19 +83,19 @@ bio:
     <em>Array</em> (Elsevier), <em>Bioinformatics and Biology Insights</em>, and <em>Big Data and
     Cognitive Computing</em>.
 
-# "Outside the lab / Personal" band at the bottom of the homepage (numbered tiles, in order).
+# "Outside the lab / Personal" section at the bottom of the homepage (numbered tiles, in order).
 outside:
-  intro: When I am not working on pose estimation, I am usually somewhere between a film, a kitchen and a good book.
+  intro: When I am not at the keyboard, you will usually find me watching a Bollywood movie, cooking something Bangali, or lost in a good book.
   items:
     - icon: film
       title: Cinema
-      text: Bollywood dramas first, then anything from Korean thrillers to quiet arthouse films.
+      text: Bollywood movies first, then Korean thrillers and quiet arthouse films from around the world.
     - icon: soup
       title: Cooking
-      text: Bangladeshi home cooking, from fish curry to bhuna khichuri with a fried egg and traditional desserts.
+      text: Bangali home cooking, from shorshe ilish (hilsa in mustard sauce) and bhuna khichuri to morog polao, with pitha for dessert.
     - icon: music
       title: Music
       text: Old Bangla folk songs and film soundtracks, usually on repeat.
     - icon: book
       title: Reading
-      text: A good book, whenever the week leaves room for one.
+      text: Self-development books, page-turning thrillers, and a romantic novel now and then.
